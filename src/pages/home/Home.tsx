@@ -1,4 +1,4 @@
-import homeLogo from '../../assets/login.gif'
+import homeLogo from '../../assets/fundo.jpg'
 import './Home.css';
 import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
@@ -31,4 +31,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Home

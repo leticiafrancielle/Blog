@@ -17,7 +17,12 @@ function Login() {
   const { usuario, handleLogin } = useContext(AuthContext);
   const { isLoading } = useContext(AuthContext);
 
- 
+  useEffect(() => {
+    if (usuario.token !== "") {
+      navigate('/home')
+    }
+  }, [usuario])
+
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuarioLogin({
       ...usuarioLogin,
@@ -29,13 +34,6 @@ function Login() {
     e.preventDefault();
     handleLogin(usuarioLogin);
   }
-
-  useEffect(() => {
-    if (usuario.token !== "") {
-      navigate('/home');
-    }
-  }, [usuario]);
-
 
   return (
     <>
@@ -90,6 +88,7 @@ function Login() {
               </Link>
             </p>
           </form>
+          <div className="fundoLogin hidden lg:block"></div>
         </div>
       </div>
     </>
